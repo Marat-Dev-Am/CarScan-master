@@ -59,6 +59,10 @@
     <Compile Include="Models\BodyModel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\CheckBoxModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\ComboBoxModel.cs" />
     <Compile Include="Models\FooterModel.cs">
       <SubType>Component</SubType>
     </Compile>

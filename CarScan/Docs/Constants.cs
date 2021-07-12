@@ -12,7 +12,7 @@ namespace CarScan.Docs
         public static Color ButtonsColor = Color.DeepSkyBlue;
         public static Color HeaderColor = Color.RoyalBlue;
         public static Color BodyColor = Color.Empty;
-        public static Color FooterColor = Color.RoyalBlue;
+        public static Color FooterColor = Color.Empty;
         public static Color HeaderForeColor = Color.White;
         public static Color BodyForeColor = Color.White;
         public static Color FooterForeColor = Color.White;
@@ -21,10 +21,11 @@ namespace CarScan.Docs
         public static int FooterHeightForMainFormPart = 12;
         #endregion
         #region Local Path
-        public static string SoftLogoPath = Environment.CurrentDirectory + @"\Icons\Logo.png";
+        public static string SoftLogoPath = Environment.CurrentDirectory + @"\Icons\Logo.gif";
+        public static string SoftHelpIconPath = Environment.CurrentDirectory + @"\Icons\Help50.png";
         #endregion
         #region Constant Properties
-        public static string SoftName = "Scanning Cars";
+        public static string SoftName = "CARSCANN";
         public static string DefaultLanguage = "ARM";
         public static string SoftFont = "Arial sans-serif";
         #endregion

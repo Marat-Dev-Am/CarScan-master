@@ -13,7 +13,7 @@ namespace CarScan.Models
             Image = new Bitmap(Constants.SoftLogoPath);
             BorderStyle = BorderStyle.None;
             SizeMode = PictureBoxSizeMode.Zoom;
-            Location = new Point(groupBox.Height / 2, groupBox.Height / 2 - 20);
+            //Location = new Point(groupBox.Height / 2, groupBox.Height / 2 - 20);
         }
     }
 }

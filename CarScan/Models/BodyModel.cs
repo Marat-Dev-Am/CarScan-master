@@ -11,7 +11,9 @@ namespace CarScan.Models
         {
             Width = Program._MainForm.Width;
             Height = Program._MainForm.Height - Program._MainForm.Height / Constants.FooterHeightForMainFormPart - Program._MainForm.Height / Constants.HeaderHeightForMainFormPart;
-            Location = new Point(Program._MainForm.Location.X, Program._MainForm.Location.Y + Program._MainForm.Height / Constants.HeaderHeightForMainFormPart);
+            Top = Program._MainForm.Header.Bottom;
+            Left = Program._MainForm.Left;
+            //Location = new Point(Program._MainForm.Location.X, Program._MainForm.Location.Y + Program._MainForm.Height / Constants.HeaderHeightForMainFormPart);
             BackColor = Constants.BodyColor;
             ForeColor = Constants.BodyForeColor;
             Paint += PaintBorderGroupBoxBodyWindow;

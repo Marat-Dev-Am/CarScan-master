@@ -5,6 +5,7 @@ using CarScan.Models;
 using CarScan.Docs;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 
 namespace CarScan
 {
@@ -13,11 +14,11 @@ namespace CarScan
         #region Initialize
         public MainForm()
         {
-            TopMost = true;git
             Program._MainForm = this;
             InitializeComponent();
             this.TimerDateTime.Tick += new EventHandler(this.TimerDateTime_Tick);
             this.TimerProgress.Tick += new EventHandler(this.TimerProgress_Tick);
+            TopMost = true;
         }
         #endregion
 
@@ -26,6 +27,12 @@ namespace CarScan
         #endregion
         #region Controls
         #region GroupBox
+        public GroupBox HeaderGroup1;
+        public GroupBox HeaderGroup2;
+        public GroupBox HeaderGroup3;
+        public GroupBox HeaderGroup4;
+
+
         public GroupBox Header;
         public GroupBox Body;
         public GroupBox Footer;
@@ -50,6 +57,10 @@ namespace CarScan
         #region ProgressBar
         public ProgressBar Progress;
         #endregion
+        #region Check Box
+        public CheckBox CheckBox = new CheckBoxModel();
+        #endregion
+
         #endregion
         #region Pages List
         public List<PagesModel> PagesList = SoftPages.LoadPageNumbers();
@@ -68,10 +79,13 @@ namespace CarScan
         #region Timers
         private void TimerDateTime_Tick(object sender, EventArgs e)
         {
-            CurrentDateTime.Text = DateTime.Now.ToString();
+            TimerDateTime.Stop();
+            CurrentDateTime.Text = DateTime.Now.ToString().Replace(" ", Environment.NewLine);
+            TimerDateTime.Start();
         }
         private void TimerProgress_Tick(object sender, EventArgs e)
         {
+            TimerProgress.Stop();
             TimerProgress.Interval = 1;
             Progress.Visible = true;
             Progress.Value += 2;
@@ -79,7 +93,10 @@ namespace CarScan
             {
                 Progress.Value = 0;
                 Progress.Visible = false;
-                TimerProgress.Stop();
+            }
+            else
+            {
+                TimerProgress.Start();
             }
         }
         #endregion
@@ -171,10 +188,10 @@ namespace CarScan
 
             Header = new HeaderModel();
             this.Controls.Add(Header);
-            Footer = new FooterModel();
-            this.Controls.Add(Footer);
             Body = new BodyModel();
             this.Controls.Add(Body);
+            Footer = new FooterModel();
+            this.Controls.Add(Footer);
             EnableDisableHideShowControls();
 
             PagesModel page = PagesList.Where(po => po.CurrentPageNumber == CurrentPage).FirstOrDefault();

@@ -10,7 +10,7 @@ namespace CarScan.Models
         {
             AutoSize = true;
             Text = text;
-            Location = location;
+            //Location = location;
             Visible = false;
             Font = new Font(Constants.SoftFont, size);
         }

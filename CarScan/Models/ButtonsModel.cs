@@ -18,7 +18,7 @@ namespace CarScan.Models
             FlatAppearance.BorderSize = 0;
             TabStop = false;
             BackColor = Constants.ButtonsColor;
-            Padding = new Padding(6);
+            //Padding = new Padding(6);
             Visible = false;
             Font = new Font(Constants.SoftFont, 20);
         }

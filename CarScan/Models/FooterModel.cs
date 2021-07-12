@@ -11,7 +11,9 @@ namespace CarScan.Models
         {
             Width = Program._MainForm.Width;
             Height = Program._MainForm.Height / Constants.FooterHeightForMainFormPart;
-            Location = new Point(Program._MainForm.Location.X, Program._MainForm.Location.Y + Program._MainForm.Height - (Program._MainForm.Height / Constants.FooterHeightForMainFormPart));
+            Top = Program._MainForm.Body.Bottom;
+            Left = Program._MainForm.Left;
+            //Location = new Point(Program._MainForm.Location.X, Program._MainForm.Location.Y + Program._MainForm.Height - (Program._MainForm.Height / Constants.FooterHeightForMainFormPart));
             BackColor = Constants.FooterColor;
             ForeColor = Constants.FooterForeColor;
             Paint += PaintBorderGroupBoxFooterWindow;
@@ -29,7 +31,7 @@ namespace CarScan.Models
         {
             // Next
             Program._MainForm.BT_Next = new ButtonModel(Program._MainForm.BT_Next_Click, MessagesModel.Next);
-            Program._MainForm.BT_Next.Top = (this.Height- Program._MainForm.BT_Next.Height )/2 - 2;
+            Program._MainForm.BT_Next.Top = this.Top ;//((this.Top - this.Bottom )/2);//this.Height - ((this.Height- Program._MainForm.BT_Next.Height )/2);
             Program._MainForm.BT_Next.Left = this.Width - Program._MainForm.BT_Next.Width - 20;
             this.Controls.Add(Program._MainForm.BT_Next);
             // Prev
